@@ -23,16 +23,16 @@ export default function Education(){
                 <div className="timeline-item"><div className="timeline-date">2015 - 2018</div></div>
                 <div className="timeline-content">
                     <h3>Practical Nursing (Diploma)</h3>
-                    <p>School</p>
-                    <p>Description</p>
+                    <p>Humber College</p>
+                    <p>Focused on understanding human anatomy and providing care.</p>
                 </div>
 
                  {/*Example three */}
                 <div className="timeline-item"><div className="timeline-date">2010 - 2012</div></div>
                 <div className="timeline-content">
-                    <h3>Another Education</h3>
-                    <p>School</p>
-                    <p>Description</p>
+                    <h3>Computer Science</h3>
+                    <p>University of Toronto</p>
+                    <p>Focused on computer science fundamentals.</p>
                 </div>
 
             </div>

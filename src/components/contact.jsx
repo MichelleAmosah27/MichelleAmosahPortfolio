@@ -49,7 +49,7 @@ const handleSubmit = (e) => {
 
             <div className="contact-information">
                 <p><strong>Email:</strong> michelle.amosah@gmail.com</p>
-                <p><strong>Phone:</strong> (416) 520 - 2042</p>
+                <p><strong>Phone:</strong> (416) 109 - 1234</p>
                 <p><strong>Location:</strong> Toronto, ON, Canada</p>
             </div>
             
