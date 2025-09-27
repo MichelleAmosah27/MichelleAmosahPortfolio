@@ -1,0 +1,25 @@
+
+
+.home-container{
+    text-align: center;
+    padding: 40px;
+}
+
+.mission-statement{
+    margin-top: 20px;
+    font-size: 1.1rem;
+    color: #333;
+}
+
+.btn-about{
+    display:inline-block;
+    margin-top: 30px;
+    padding: 10px 20px;
+    background: #4CAF50;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 8px;
+    /*transition-duration: 0.3s;*/
+
+}

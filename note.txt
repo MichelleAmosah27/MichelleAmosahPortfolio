@@ -1,0 +1,8 @@
+
+
+npm install vite@laste - boiler vite plate for our portfolio
+
+jsx uses elements just as html that can be used in javascript files
+
+strictMOde helps to follow specified conventions in js
+

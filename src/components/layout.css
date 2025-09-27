@@ -1,0 +1,40 @@
+
+.navbar{
+    display:"flex";
+    justify-content:"space-between";
+    background: #333;
+    /*align-items: center;*/
+    padding: 10px 20px;
+    /*background-color: #1e3a8a;*/
+    color:white;
+
+}
+
+.logo{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-shape{
+    width: 40px;
+    height: 40px;
+    background: #4CAF50;
+    clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: red;
+}
+
+.nav-links a{
+    margin: 0 10px;
+    text-decoration:none;
+    color:white;
+
+}
+
+.nav-links a:hover{
+    color: #4CAF50;
+}
