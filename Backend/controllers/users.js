@@ -3,6 +3,7 @@
 //CRUD operations for project model
 
 import usersModel from "../models/users.js";
+import generateToken from "../utils/jwt.js";
 
 //read all projects
 export const getAllUsers = async (req, res) => {
@@ -52,7 +53,11 @@ export const createUser = async (req, res) => {
 
         const newUsers = new usersModel(req.body);
         const savedUsers = await newUsers.save();
-        res.status(200).json(savedUsers);    
+
+        //token
+        const token = generateToken(savedUsers);
+
+        res.status(200).json({message:"User registered successfully",user:savedUsers, token});    
     } catch (error) {  
         res.status(500).json({message: error.message});
     } 
@@ -84,6 +89,31 @@ export const deleteUserById = async (req, res) => {
     } catch (error) {  
         res.status(500).json({message: error.message});
     }  
+}
+
+//user login
+export const loginUser = async(req, res) =>{
+
+    try {
+        const {email, password} = req.body;
+        const user = await usersModel.findOne({email}).select("+password")
+
+        if(!user){
+            return res.status(404).json({message: "User not found"});// 404 HTTP status code for not found
+        }
+
+        const isPasswordValid = await user.comparePassword(password);
+
+        if (!isPasswordValid) {
+            return res.status(401).json({message: "Invalid password"});
+        }
+
+        const token = generateToken(user)
+
+        return res.status(200).json({message: "Login successful", user, token});
+    } catch (error) {
+        res.status(500).json({message: error.message});
+    }
 }
 
 

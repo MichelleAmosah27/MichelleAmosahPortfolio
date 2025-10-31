@@ -10,16 +10,18 @@ import{
     deleteAllProjects
 } from "../controllers/project.js";
 
+import authMiddleware from "../middlewares/auth.js";
+
 //wire in express
 const router = express.Router();
 
 //REST API
-router.get('/', getAllProjects) //READ - performed by only the browser
-router.get('/:id', getProjectById) //READ
-router.post('/', createProject) // CREATE
-router.put('/:id', updateProjectById)//UPDATE
-router.delete('/:id', deleteProjectById) //DELETE
-router.delete('/', deleteAllProjects) //DELETE ALL
+router.get('/',authMiddleware, getAllProjects) //READ - performed by only the browser
+router.get('/:id', authMiddleware, getProjectById) //READ
+router.post('/',authMiddleware, createProject) // CREATE
+router.put('/:id',authMiddleware, updateProjectById)//UPDATE
+router.delete('/:id',authMiddleware, deleteProjectById) //DELETE
+router.delete('/',authMiddleware, deleteAllProjects) //DELETE ALL
 
 
 export default router;

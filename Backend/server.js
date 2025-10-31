@@ -1,11 +1,13 @@
 
 import express from "express";
 import mongoose from "mongoose";
-import dotenv from 'dotenv/config'
+import dotenv from "dotenv";
+dotenv.config();
+
 
 //Connect to MongoDB
 
-mongoose.connect(process.env.MONGODB_URI);
+mongoose.connect(process.env.MONGO_URI);
 
 //verify if the connection is successful
 const connection = mongoose.connection;
