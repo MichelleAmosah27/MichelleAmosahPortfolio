@@ -6,3 +6,5 @@ jsx uses elements just as html that can be used in javascript files
 
 strictMOde helps to follow specified conventions in js
 
+user token:
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5MDQzYzJkNjg0MzQ0NDRhMWRjZTM3ZSIsImVtYWlsIjoiZ2VvcmdlQGdtYWlsLmNvbSIsImlhdCI6MTc2MTg4Njg1OCwiZXhwIjoxNzY0NDc4ODU4fQ.281rwmpJ327jn9pr__yy1HzTHKLe0J9ndNNAeiSqUIY

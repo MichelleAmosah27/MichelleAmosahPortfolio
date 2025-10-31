@@ -80,7 +80,7 @@ export const updateUserById = async (req, res) => {
 //DELETE by ID
 export const deleteUserById = async (req, res) => {
     try {
-        const deletedUser = await projectModel.findByIdAndDelete(req.params.id);
+        const deletedUser = await usersModel.findByIdAndDelete(req.params.id);
         if(!deletedUser){
             //if object is empty or does not exist
             return res.status(404).json({message:"Project not found!"}); 
