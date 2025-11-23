@@ -8,3 +8,54 @@ strictMOde helps to follow specified conventions in js
 
 user token:
 eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5MDQzYzJkNjg0MzQ0NDRhMWRjZTM3ZSIsImVtYWlsIjoiZ2VvcmdlQGdtYWlsLmNvbSIsImlhdCI6MTc2MTg4Njg1OCwiZXhwIjoxNzY0NDc4ODU4fQ.281rwmpJ327jn9pr__yy1HzTHKLe0J9ndNNAeiSqUIY
+
+Week 8 notes:
+What the prof does is to create a new folder for each week. He goes to the github repo and copies the link and enters git clone <link> and a . this creates the folder in the root folder. You will also need the .env file.
+Github is a source control
+There are workspaces that allows devs to work in a monorepo approach. So instead of runing the front and server side independently, copy both the dependencies and devdependencies from the client and server side into a package.son file in the root folder. Once this is done. remove what you copied from each side package.json files. Remember to create your client and server side in separate folders next time.
+
+dependencies and devdependencies removed from client side
+
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "dotenv": "^17.2.3",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
+    "react-router-dom": "^7.9.1"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.35.0",
+    "@types/react": "^19.1.13",
+    "@types/react-dom": "^19.1.9",
+    "@vitejs/plugin-react": "^5.0.2",
+    "concurrently": "^9.2.1",
+    "eslint": "^9.35.0",
+    "eslint-plugin-react-hooks": "^5.2.0",
+    "eslint-plugin-react-refresh": "^0.4.20",
+    "globals": "^16.4.0",
+    "nodemon": "^3.1.10",
+    "vite": "^7.1.6"
+  }
+
+Backend/Server side
+
+dependencies{
+ "bcrypt": "^6.0.0",
+    "dotenv": "^17.2.3",
+    "express": "^5.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongodb": "^6.20.0",
+    "mongoose": "^8.19.2"
+}
+
+devDependencies{
+
+     "concurrently": "^9.2.1",
+    "nodemon": "^3.1.10"
+}
+
+
+The browser has a feature that prevents web applications from manipulating eachother using their url. What happens here is that, if you want to connect your frontend to the backend, you can used the port that your backend is running on. However, because of this feature in the browser, it will not be possible it will prevent you from accessing a url that the client is not aware of. This feature promotes transparency. Rather, you have to define a proxy in vite.config.js file with a server:{proxy:{'/api':'http://localhost:3000'}}. This tells the browser that it is safe to access the specified api or url. and tell the client that your server is at this location and that you can access using this link.
+
+The focus for this exercise in week8 is to test that your front and backend can communicated with eachother.
+

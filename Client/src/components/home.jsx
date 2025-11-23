@@ -4,10 +4,34 @@ import {Routes, Route} from 'react-router-dom';
 import './about';
 import './home.css'
 
+//-----------testing week 8 lessons here. Remember to delete-------------
+//import { useState, useEffect } from 'react'; //these are known as hooks. it is something that will be injecting data within the lifecycle of the application - page will know and autoupdate
+
+//let data = "My data from Michelle"
+
+//-------------------------------------------------
+
 export default function Home(){
 
+    // const [data, setData] = useState(null);
+    // const apiURL = '/api'; //this will allow cross-origin requirements
+
+    // useEffect(() => {
+
+    //     fetch(`${apiURL}/data`)
+    //         .then((res) => res.json())
+    //         .then((dataFromServer) => setData(dataFromServer))
+    //         .then(() => console.log(`Data fetched successfully!`))
+
+    // }, [data]);
+
+     //<p> {data ? data.message : "Loading data from server..."}</p>
+ 
     return(
     <>
+
+       
+
        <div className='home-container'>
 
             <h2>Welcome to My Portfolio</h2>

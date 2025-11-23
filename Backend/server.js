@@ -27,10 +27,15 @@ import usersRoutes from "../Backend/routes/users.js";
 //after importing, use-----------
 app.use(express.json());
 
-app.use('/projects', projectRoutes);
-app.use('/contacts', contactsRoutes);
-app.use('/education', educationRoutes);
-app.use('/users', usersRoutes);
+app.use('/api/projects', projectRoutes);
+app.use('/api/contacts', contactsRoutes);
+app.use('/api/education', educationRoutes);
+app.use('/api/users', usersRoutes);
+
+//Week 8 frontend and backend communicating with each other
+app.use('/api/data', (req,res) => {
+    res.json({message: 'Hello from the API! Again!'})
+})
 
 //-------------------------------
 app.listen(3000);

@@ -25,6 +25,8 @@ import './layout.css'
                 <Link to="/projects">Projects</Link> | 
                 <Link to="/services">Services</Link> |
                 <Link to="/contact">Contact</Link> 
+                <Link to="/login" className="btn btn-outline-light me-2">Login</Link>
+                <Link to="/register" className="btn btn-warning">Register</Link>
             </nav>
        </header> 
     </>

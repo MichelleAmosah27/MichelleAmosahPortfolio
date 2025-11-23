@@ -56,7 +56,7 @@ const handleSubmit = (e) => {
 
             {/*Contact form */}
 
-            <form className="contact-form" onSubmit={handleSubmit}>
+            <form className="form" onSubmit={handleSubmit}>
 
                 <div className="form-group">
                     <input type="text" name="firstName" placeholder="First Name" value={formData.firstName} onChange={handleChange} required/>
