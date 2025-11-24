@@ -11,7 +11,8 @@ const generateToken = (userInformation) =>{
         //information to encrypted in the token also known as payload
         id: userInformation.id,
         email: userInformation.email,
-        userName: userInformation.userName
+        userName: userInformation.userName,
+        role: userInformation.role
 
     },
     //secret to encrypte the above information. Can be something that only our code know

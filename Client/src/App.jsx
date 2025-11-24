@@ -3,33 +3,31 @@ import './App.css'
 import MainRouter from "./MainRouter"
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { useEffect, useState } from 'react'
+import { BrowserRouter } from 'react-router-dom';
+
 
 function App() {
  
-// Get user from localStorage
-  const getUserFromStorage = () => {
-    const token = localStorage.getItem('token');
-    const username = localStorage.getItem('username');
-    return token && username ? { username } : null;
-  };
+   const [user, setUser] = useState(null);
 
-  const [user, setUser] = useState(getUserFromStorage());
+    useEffect(() => {
+        const username = localStorage.getItem('username');
+        if (username) {
+            setUser({ username });
+        }
+    }, []);
 
-  // Sync with localStorage when app loads
-  useEffect(() => {
-    setUser(getUserFromStorage());
-  }, []);
+    const handleLogout = () => {
+        localStorage.removeItem('token');
+        localStorage.removeItem('username');
+        setUser(null);
+    };
 
-  // logout function
-  const handleLogout = () => {
-    localStorage.removeItem('token');
-    localStorage.removeItem('username');
-    setUser(null);
-  };
-
-  return (
-      <MainRouter user={user} onLogout={handleLogout}/>
-  )
+    return (
+       
+            <MainRouter user={user} onLogout={handleLogout} onLogin={setUser}/>
+      
+    );
 }
 
 

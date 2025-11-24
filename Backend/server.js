@@ -32,6 +32,7 @@ app.use('/api/contacts', contactsRoutes);
 app.use('/api/education', educationRoutes);
 app.use('/api/users', usersRoutes);
 
+
 //Week 8 frontend and backend communicating with each other
 app.use('/api/data', (req,res) => {
     res.json({message: 'Hello from the API! Again!'})
