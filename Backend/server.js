@@ -4,6 +4,11 @@ import mongoose from "mongoose";
 import dotenv from "dotenv";
 dotenv.config();
 
+import path from "path";
+import { fileURLToPath } from "url";
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
 
 //Connect to MongoDB
 
@@ -37,6 +42,12 @@ app.use('/api/users', usersRoutes);
 app.use('/api/data', (req,res) => {
     res.json({message: 'Hello from the API! Again!'})
 })
+
+// Serve static files from the React frontend app
+app.use(express.static(path.join(__dirname, '../Client/dist')));
+app.get(/^\/(?!api).*/, (req, res) => {
+    res.sendFile(path.join(__dirname, '../Client/dist/index.html'));
+});
 
 //-------------------------------
 app.listen(3000);
