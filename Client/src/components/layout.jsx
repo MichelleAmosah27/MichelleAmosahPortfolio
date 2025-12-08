@@ -16,12 +16,12 @@ export default function Layout({ user, onLogout }) {   // <-- FIXED
                 </div>
 
                 <nav className="nav-links">
-                    <Link to="/">Home</Link> |
-                    <Link to="/about">About</Link> |
-                    <Link to="/education">Education</Link> |
-                    <Link to="/projects">Projects</Link> | 
-                    <Link to="/services">Services</Link> |
-                    <Link to="/contact">Contact</Link>
+                    <Link to="/" data-cy="nav-home">Home</Link> |
+                    <Link to="/about" data-cy="nav-about">About</Link> |
+                    <Link to="/education"data-cy="nav-education">Education</Link> |
+                    <Link to="/projects" data-cy="nav-projects">Projects</Link> | 
+                    <Link to="/services" data-cy="nav-services">Services</Link> |
+                    <Link to="/contact"data-cy="nav-contact">Contact</Link>
 
                     {user ? (
                         <>
@@ -38,8 +38,8 @@ export default function Layout({ user, onLogout }) {   // <-- FIXED
                         </>
                     ) : (
                         <>
-                            <Link to="/login" className="btn btn-outline-light me-2">Login</Link>
-                            <Link to="/register" className="btn btn-warning">Register</Link>
+                            <Link to="/login" className="btn btn-outline-light me-2" data-cy="nav-login">Login</Link>
+                            <Link to="/register" className="btn btn-warning" data-cy="nav-register">Register</Link>
                         </>
                     )}
 

@@ -10,5 +10,13 @@ export default defineConfig({
       '/api': 'http://localhost:3000'
     }
   }
+,
+  //test
+  test:{
+    environment: "jsdom",
+    globals: true,
+    setupFiles: "./src/setupTests.js"
+    
+  }
 })
 

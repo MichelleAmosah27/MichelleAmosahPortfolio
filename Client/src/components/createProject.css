@@ -1,0 +1,73 @@
+.project-create-container {
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 30px 25px;
+  background: #f4f7fa;
+  border-radius: 12px;
+  border-left: 6px solid #4CAF50;
+  box-shadow: 0px 4px 12px rgba(0,0,0,0.1);
+  font-family: Arial, sans-serif;
+}
+
+.project-create-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1b3a4b;
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+/* Error Box */
+.project-error {
+  background: #ffdddd;
+  color: #b30000;
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  border-left: 5px solid #b30000;
+}
+
+/* Form layout */
+.project-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.project-field {
+  text-align: left;
+}
+
+.project-field label {
+  font-weight: bold;
+  color: #1b3a4b;
+  margin-bottom: 6px;
+  display: block;
+}
+
+.project-field input,
+.project-field textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  background: #ffffff;
+  box-shadow: 0px 1px 4px rgba(0,0,0,0.05);
+}
+
+.project-submit-btn {
+  width: 100%;
+  padding: 14px;
+  background: #4CAF50;
+  color: white;
+  border: none;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.project-submit-btn:hover {
+  background-color: #388E3C;
+}

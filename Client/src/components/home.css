@@ -1,4 +1,4 @@
-
+/* 
 
 .home-container{
     text-align: center;
@@ -22,4 +22,69 @@
     border-radius: 8px;
     /*transition-duration: 0.3s;*/
 
+/*} */
+
+.home-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+/* Title */
+.home__title {
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: #1b3a4b; /* aviation/security-inspired deep navy */
+  margin-bottom: 20px;
+}
+
+.home__intro {
+  font-size: 1.2rem;
+  color: #333;
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+/* Mission */
+.home__mission-box {
+  background: #f4f7fa;
+  padding: 25px;
+  border-radius: 10px;
+  margin-bottom: 40px;
+  border-left: 6px solid #4CAF50;
+}
+
+.home__mission-title {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #2a2a2a;
+}
+
+.home__mission {
+  font-size: 1.1rem;
+  color: #444;
+}
+
+/* CTA button */
+.btn-about {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 25px;
+  background: #4CAF50;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 8px;
+  transition: 0.3s ease-in-out;
+}
+
+.btn-about:hover {
+  background: #45a047;
+}
+
+/* Optional future-proof section spacing */
+.home__cta {
+  margin-top: 30px;
 }

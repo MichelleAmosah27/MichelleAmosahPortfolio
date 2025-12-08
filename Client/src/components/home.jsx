@@ -1,56 +1,44 @@
-import {Link} from 'react-router-dom';
-import {Routes, Route} from 'react-router-dom';
 
-import './about';
-import './home.css'
 
-//-----------testing week 8 lessons here. Remember to delete-------------
-//import { useState, useEffect } from 'react'; //these are known as hooks. it is something that will be injecting data within the lifecycle of the application - page will know and autoupdate
+import { Link } from "react-router-dom";
+import "./home.css";
 
-//let data = "My data from Michelle"
+export default function Home() {
+  return (
+    <section className="home-container" data-cy="home-page">
 
-//-------------------------------------------------
+      <header className="home-header">
+        <h1 className="home__title" data-cy="home-title">
+          Welcome to My Portfolio
+        </h1>
+        <p className="home__intro" data-cy="home-intro">
+          Hi, I’m <strong>Michelle Amosah</strong>.  
+          I am building expertise in Aviation Security, Web Development,
+          Data Analysis, and Mobile Development.
+        </p>
+      </header>
 
-export default function Home(){
+      <article className="home__mission-box" data-cy="mission-box">
+        <h2 className="home__mission-title">My Mission</h2>
+        <p className="home__mission" data-cy="mission-statement">
+          To create impactful, secure, user-friendly, and innovative solutions 
+          through continuous learning, disciplined practice, and dedication.
+        </p>
+      </article>
 
-    // const [data, setData] = useState(null);
-    // const apiURL = '/api'; //this will allow cross-origin requirements
+      <div className="home__cta" data-cy="cta-section">
+        <Link 
+          to="/about" 
+          className="btn-about"
+          data-cy="about-link"
+        >
+          Learn More About Me
+        </Link>
+      </div>
 
-    // useEffect(() => {
-
-    //     fetch(`${apiURL}/data`)
-    //         .then((res) => res.json())
-    //         .then((dataFromServer) => setData(dataFromServer))
-    //         .then(() => console.log(`Data fetched successfully!`))
-
-    // }, [data]);
-
-     //<p> {data ? data.message : "Loading data from server..."}</p>
- 
-    return(
-    <>
-
-       
-
-       <div className='home-container'>
-
-            <h2>Welcome to My Portfolio</h2>
-
-            <p>
-                Hi, I am Michelle Amosah. Thank you for visiting my portfolio website. My mission is to grow as a developer, share my work, and build meaningful projects.
-            </p>
-
-            <p className='mission-statement'>
-                <strong>Mission Statement:</strong> To create impactful, user-friendly, and innovative solutions through continuous learning and dedication.
-            </p>
-
-            {/* Button linking to About page */}
-            
-            <Link to="about" className="btn-about">Learn more About Me</Link>
-
-       </div>
-
-    </>  
-    )
+    </section>
+  );
 }
+
+
 
