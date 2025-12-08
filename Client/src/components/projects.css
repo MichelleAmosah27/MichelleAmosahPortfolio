@@ -1,174 +1,112 @@
-
-/* ==== MAIN CONTAINER ==== */
 .projects-container {
   max-width: 1000px;
   margin: 40px auto;
   padding: 20px;
-  text-align: center;
   font-family: Arial, sans-serif;
+  text-align: center;
 }
 
-.projects-container h2 {
-  font-size: 2rem;
-  margin-bottom: 10px;
-  color: #222;
+/* Page title */
+.projects-title {
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: #1b3a4b;
+  margin-bottom: 25px;
 }
 
-.intro {
-  font-size: 1.1rem;
-  margin-bottom: 30px;
-  color: #444;
+/* Error box */
+.projects-error {
+  background: #ffdddd;
+  color: #b30000;
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  border-left: 5px solid #b30000;
 }
 
-/* ==== GRID LAYOUT ==== */
+/* Create button */
+.create-project-btn {
+  background: #4CAF50;
+  color: white;
+  border: none;
+  padding: 12px 22px;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-bottom: 25px;
+  transition: background 0.3s ease;
+}
+
+.create-project-btn:hover {
+  background: #388E3C;
+}
+
+/* Grid layout for project cards */
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 25px;
-  margin-top: 20px;
 }
 
-/* ==== PROJECT CARDS ==== */
+/* Project card */
 .project-card {
-  background: #fff;
+  background: #f4f7fa;
   padding: 20px;
   border-radius: 12px;
-  border: 1px solid #e5e5e5;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  border-left: 6px solid #4CAF50;
+  box-shadow: 0px 4px 10px rgba(0,0,0,0.08);
   text-align: left;
 }
 
-.project-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 6px 14px rgba(0,0,0,0.1);
-}
-
-.project-card h3 {
+.project-card-title {
+  color: #1b3a4b;
   margin-bottom: 10px;
-  color: #222;
   font-size: 1.3rem;
 }
 
+/* Card text */
 .project-card p {
-  color: #666;
-  line-height: 1.5;
-  font-size: 0.95rem;
+  margin: 5px 0;
+  color: #444;
 }
 
-/* ==== ADMIN PANEL ==== */
-hr {
-  margin: 40px 0;
-  border: none;
-  border-top: 1px solid #ddd;
-}
-
-h3 {
-  text-align: left;
-  margin-bottom: 15px;
-}
-
-/* admin container */
-.action-panel {
-  background: #fafafa;
-  padding: 20px;
-  border-radius: 12px;
-  margin-bottom: 30px;
-  border: 1px solid #eee;
-  text-align: left;
-}
-
-/* Buttons */
-.action-panel button {
-  padding: 10px 15px;
-  background: #333;
-  color: white;
-  border: none;
-  margin-top: 10px;
-  border-radius: 6px;
-  cursor: pointer;
-  font-size: 0.95rem;
-  transition: background 0.2s ease;
-}
-
-.action-panel button:hover {
-  background: #555;
-}
-
-/* Danger buttons */
-.action-panel .danger {
-  background: #d9534f;
-}
-
-.action-panel .danger:hover {
-  background: #b52c28;
-}
-
-/* Input rows */
-.inline-group {
+/* Buttons inside the card */
+.project-actions {
   display: flex;
-  gap: 10px;
+  justify-content: space-between;
   margin-top: 15px;
 }
 
-.inline-group input {
-  flex: 1;
-  padding: 10px;
+.project-update-btn,
+.project-delete-btn {
+  padding: 8px 14px;
   border-radius: 6px;
-  border: 1px solid #ccc;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
 }
 
-/* ==== FORM BLOCKS ==== */
-.form-block {
-  margin-top: 25px;
-  display: flex;
-  flex-direction: column;
+.project-update-btn {
+  background: #1b3a4b;
+  color: white;
 }
 
-.form-block input,
-.form-block textarea {
-  margin-top: 10px;
-  padding: 10px;
-  border-radius: 6px;
-  border: 1px solid #ccc;
-  font-size: 0.95rem;
-  resize: none;
+.project-update-btn:hover {
+  background: #163040;
 }
 
-/* ==== MESSAGE STYLES ==== */
-.success {
-  background: #d4edda;
-  color: #155724;
-  padding: 12px;
-  border-radius: 8px;
-  margin-bottom: 15px;
-  border-left: 5px solid #28a745;
+.project-delete-btn {
+  background: #b30000;
+  color: white;
 }
 
-.error {
-  background: #f8d7da;
-  color: #721c24;
-  padding: 12px;
-  border-radius: 8px;
-  margin-bottom: 15px;
-  border-left: 5px solid #dc3545;
+.project-delete-btn:hover {
+  background: #8a0000;
 }
 
-/* ==== SINGLE PROJECT PREVIEW ==== */
-.single-project-card {
-  background: #fff;
-  margin-top: 30px;
-  padding: 20px;
-  border-radius: 12px;
-  text-align: left;
-  border: 1px solid #ddd;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-}
-
-.single-project-card h3 {
-  margin-bottom: 10px;
-}
-
-.single-project-card p {
-  color: #555;
+/* Empty state */
+.no-projects {
+  color: #444;
+  font-size: 1.1rem;
+  margin-top: 20px;
 }

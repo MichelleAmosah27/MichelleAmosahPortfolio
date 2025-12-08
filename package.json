@@ -160,7 +160,8 @@
     "start": "npm-run-all --parallel start:client start:backend",
     "start:backend": "npm --prefix Backend run dev",
     "start:client": "npm --prefix Client run dev",
-    "build": "npm --prefix Client run build"
+    "build": "npm --prefix Client run build",
+    "e2e": "cypress open"
   },
   "repository": {
     "type": "git",

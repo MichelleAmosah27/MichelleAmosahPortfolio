@@ -1,5 +1,9 @@
+
+
+
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import './createProject.css';
 
 const CreateProject = () => {
     const navigate = useNavigate();
@@ -12,6 +16,8 @@ const CreateProject = () => {
         completion: "",
         description: ""
     });
+
+    const [error, setError] = useState("");
 
     const handleChange = (e) => {
         setFormData({
@@ -41,92 +47,114 @@ const CreateProject = () => {
 
             if (!response.ok) {
                 const errorData = await response.json();
-                throw new Error(errorData.message || "Failed to create");
+                throw new Error(errorData.message || "Failed to create project");
             }
 
-            navigate("/projects");  // Go back to project list
+            navigate("/projects");
 
-        } catch (error) {
-            console.error("Create project error:", error.message);
+        } catch (err) {
+            setError(err.message);
         }
     };
 
     return (
-        <div className="container mt-5">
-            <h2>Create Project</h2>
+        <section className="project-create-container" data-cy="create-project-page">
 
-            <form onSubmit={handleSubmit} className="mt-4">
+            <h1 className="project-create-title" data-cy="create-project-title">
+                Create Project
+            </h1>
 
-                <div className="mb-3">
+            {error && (
+                <div className="project-error" data-cy="project-error">
+                    {error}
+                </div>
+            )}
+
+            <form onSubmit={handleSubmit} className="project-form" data-cy="project-form">
+
+                {/* Project Name */}
+                <div className="project-field">
                     <label>Project Name</label>
-                    <input 
+                    <input
                         name="name"
                         type="text"
-                        className="form-control"
                         value={formData.name}
                         onChange={handleChange}
                         required
+                        data-cy="input-project-name"
                     />
                 </div>
 
-                <div className="mb-3">
+                {/* First Name */}
+                <div className="project-field">
                     <label>First Name</label>
-                    <input 
+                    <input
                         name="firstName"
                         type="text"
-                        className="form-control"
                         value={formData.firstName}
                         onChange={handleChange}
+                        data-cy="input-firstName"
                     />
                 </div>
 
-                <div className="mb-3">
+                {/* Last Name */}
+                <div className="project-field">
                     <label>Last Name</label>
-                    <input 
+                    <input
                         name="lastName"
                         type="text"
-                        className="form-control"
                         value={formData.lastName}
                         onChange={handleChange}
+                        data-cy="input-lastName"
                     />
                 </div>
 
-                <div className="mb-3">
+                {/* Email */}
+                <div className="project-field">
                     <label>Email</label>
-                    <input 
+                    <input
                         name="email"
                         type="email"
-                        className="form-control"
                         value={formData.email}
                         onChange={handleChange}
+                        data-cy="input-email"
                     />
                 </div>
 
-                <div className="mb-3">
+                {/* Completion Date */}
+                <div className="project-field">
                     <label>Completion Date</label>
-                    <input 
+                    <input
                         name="completion"
                         type="date"
-                        className="form-control"
                         value={formData.completion}
                         onChange={handleChange}
+                        data-cy="input-completion"
                     />
                 </div>
 
-                <div className="mb-3">
+                {/* Description */}
+                <div className="project-field">
                     <label>Description</label>
-                    <textarea 
+                    <textarea
                         name="description"
-                        className="form-control"
                         rows="4"
                         value={formData.description}
                         onChange={handleChange}
+                        data-cy="input-description"
                     />
                 </div>
 
-                <button className="btn btn-primary">Create Project</button>
+                <button 
+                    type="submit" 
+                    className="project-submit-btn"
+                    data-cy="submit-project"
+                >
+                    Create Project
+                </button>
             </form>
-        </div>
+
+        </section>
     );
 };
 

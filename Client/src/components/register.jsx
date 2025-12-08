@@ -1,5 +1,8 @@
+
+
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import './register.css';
 
 const Register = () => {
     const [form, setForm] = useState({
@@ -12,12 +15,7 @@ const Register = () => {
     const navigate = useNavigate();
 
     const handleChange = (e) => {
-        const { name, value } = e.target;
-
-        setForm({
-            ...form,
-            [name]: value
-        });
+        setForm({ ...form, [e.target.name]: e.target.value });
     };
 
     const handleSubmit = async (e) => {
@@ -26,9 +24,7 @@ const Register = () => {
         try {
             const response = await fetch('/api/users', {
                 method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
+                headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(form),
             });
 
@@ -36,66 +32,82 @@ const Register = () => {
 
             const data = await response.json();
 
-            // Save login info in localStorage
+            // Save login info automatically
             localStorage.setItem('token', data.token);
             localStorage.setItem('username', data.user.username);
 
-            navigate('/login'); // redirect to login
+            navigate('/login'); // redirect to Login page
+
         } catch (error) {
             setError(error.message);
         }
     };
 
     return (
-        <div className="container mt-4">
-            <h1 className="text-center">Register</h1>
-            {error && <div className="alert alert-danger">{error}</div>}
+        <section className="register-container" data-cy="register-page">
 
-            <form className="form" onSubmit={handleSubmit}>
-                <div className="form-group">
+            <h1 className="register-title" data-cy="register-title">Create an Account</h1>
+
+            {error && (
+                <div className="register-error" data-cy="register-error">
+                    {error}
+                </div>
+            )}
+
+            <form className="register-form" onSubmit={handleSubmit} data-cy="register-form">
+
+                {/* Username */}
+                <div className="register-field">
                     <label htmlFor="username">Username</label>
                     <input
                         type="text"
                         id="username"
                         name="username"
-                        className="form-control"
                         value={form.username}
                         onChange={handleChange}
                         required
+                        data-cy="register-username"
                     />
                 </div>
 
-                <div className="form-group">
+                {/* Email */}
+                <div className="register-field">
                     <label htmlFor="email">Email</label>
                     <input
                         type="email"
                         id="email"
                         name="email"
-                        className="form-control"
                         value={form.email}
                         onChange={handleChange}
                         required
+                        data-cy="register-email"
                     />
                 </div>
 
-                <div className="form-group">
+                {/* Password */}
+                <div className="register-field">
                     <label htmlFor="password">Password</label>
                     <input
                         type="password"
                         id="password"
                         name="password"
-                        className="form-control"
                         value={form.password}
                         onChange={handleChange}
                         required
+                        data-cy="register-password"
                     />
                 </div>
 
-                <button type="submit" className="submit-btn">
+                <button 
+                    type="submit" 
+                    className="register-btn"
+                    data-cy="register-submit"
+                >
                     Register
                 </button>
+
             </form>
-        </div>
+        </section>
     );
 };
 
