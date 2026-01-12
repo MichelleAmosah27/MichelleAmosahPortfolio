@@ -40,7 +40,7 @@ export default function About() {
 
       {/* Resume button */}
       <div className="about__cta">
-        <a
+        {/* <a
           href={resume}
           target="_blank"
           rel="noopener noreferrer"
@@ -48,7 +48,7 @@ export default function About() {
           data-cy="resume-link"
         >
           View My Resume (PDF)
-        </a>
+        </a> */}
       </div>
 
     </section>
