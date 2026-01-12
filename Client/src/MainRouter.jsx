@@ -23,8 +23,8 @@ const MainRouter = ({ user, onLogout, onLogin }) => {
                 <Route path='about' element={<About />} />
                 <Route path='contact' element={<Contact />} />
                 <Route path='education' element={<Education />} />
-                {/* <Route path='projects' element={<Projects />} /> */}
-                {/* <Route path='services' element={<Services />} /> */}
+                <Route path='projects' element={<Projects />} />
+                <Route path='services' element={<Services />} />
                 <Route path="register" element={<Register />} />
                 <Route path="login" element={<Login onLogin={onLogin} />} />
                 <Route path="/project-create" element={<CreateProject />} />
