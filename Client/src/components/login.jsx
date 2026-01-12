@@ -286,13 +286,13 @@ const Login = ({ onLogin }) => {
                     />
                 </div>
 
-                {/* <button 
+                <button 
                     type="submit" 
                     className="login-btn"
                     data-cy="login-submit"
                 >
                     Login
-                </button> */}
+                </button>
 
             </form>
         </section>

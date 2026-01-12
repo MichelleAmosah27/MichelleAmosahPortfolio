@@ -98,13 +98,13 @@ const Register = () => {
                     />
                 </div>
 
-                {/* <button 
+                <button 
                     type="submit" 
                     className="register-btn"
                     data-cy="register-submit"
                 >
                     Register
-                </button> */}
+                </button>
 
             </form>
         </section>
